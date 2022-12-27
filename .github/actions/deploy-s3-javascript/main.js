@@ -8,6 +8,20 @@ const exec = require('@actions/exec')
 
 
 function run() {
+    //1. Get some input values
+   const bucket = core.getInput('bucket', {required: true})
+    const bucketRegion = core.getInput('bucket-region', {required:true})
+    const distFolder = core.getInput('dist-folder', {required:true})
+
+
+    // upload my files
+
+ AWS_ACCESS_KEY_ID=AKIA6A6BP3O5OLQL2HGY
+    const s3Uri = `s3://${bucket}`
+    exec.exec(`aws s3 sync ${distFolder} ${s3Uri} --region ${bucketRegion}`);
+
+
+
 
     core.notice("Hello form my custom javascript actions")
 }
