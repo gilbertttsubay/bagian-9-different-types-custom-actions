@@ -1,10 +1,10 @@
-// const core = import('@actions/core')
-// const github = import('@actions/github')
-// const exec = import('@actions/exec')
+const core = require('@actions/core')
+const github = require('@actions/github')
+const exec = require('@actions/exec')
 
-import core from "@actions/core"
-import github from "@actions/github"
-import exec from "@actions/exec"
+// import core from "@actions/core"
+// import github from "@actions/github"
+// import exec from "@actions/exec"
 
 
 function run() {
