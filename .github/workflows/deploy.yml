@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
+    braches:
+      - master
 jobs:
   lint:
     runs-on: ubuntu-latest
