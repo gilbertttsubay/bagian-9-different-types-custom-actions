@@ -75,6 +75,7 @@ jobs:
       - name: Output contents
         run: ls
       - name: Deploy site
+        id: deploy-site
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -83,3 +84,5 @@ jobs:
           bucket: gha-custom-action-hosting-gilbert
           dist-folder: ./dist
           bucket-region: us-east-1
+      - name: Output website url
+        run: echo "Website url -> ${{ steps.deploy-site.outputs.website-url }}"
