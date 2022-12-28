@@ -26,3 +26,4 @@ runs:
     - name: Output the branch
       id: output-branch
       run: echo "${{ GITHUB_REF }}"
+      shell: bash
