@@ -26,5 +26,5 @@ runs:
     - name: Output the branch
       id: output-branch
 #      if: $GITHUB_REF##*/ == 'master'
-      run: echo "${github.branch}"
+      run: echo "${{ github.branch }}"
       shell: bash
