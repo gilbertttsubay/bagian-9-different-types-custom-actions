@@ -25,5 +25,5 @@ runs:
       shell: bash
     - name: Output the branch
       id: output-branch
-      run: echo "${{ GITHUB_REF }}"
+      run: echo "${GITHUB_REF##*/}"
       shell: bash
