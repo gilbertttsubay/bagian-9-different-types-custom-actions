@@ -3,9 +3,11 @@ on:
   push:
     branches:
       - master
+      - 'daily/**'
   workflow_dispatch:
     braches:
       - master
+      - 'daily/**'
 jobs:
   lint:
     runs-on: ubuntu-latest
