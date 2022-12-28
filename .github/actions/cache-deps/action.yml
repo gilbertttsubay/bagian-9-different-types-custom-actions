@@ -21,6 +21,7 @@ runs:
     - name: Failed Job if not branch master
       if: github.ref_name != 'master'
       run: exit 1
+      shell: bash
     - name: Only output inputted message
       id: output-message
       run: echo "message='${{ inputs.message }}'" >> $GITHUB_OUTPUT
