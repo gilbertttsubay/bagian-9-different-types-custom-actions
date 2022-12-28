@@ -1,6 +1,5 @@
 name: 'Get and Cache Dependencies'
 description: 'Get the dependencies (via npm) and cache them'
-
 inputs:
   caching:
     description: 'Whether to cache dependencies or not'
@@ -20,6 +19,7 @@ runs:
   using: 'composite'
   steps:
     - name: Only output inputted message
+      if: github.ref_name != 'master'
       id: output-message
       run: echo "message='${{ inputs.message }}'" >> $GITHUB_OUTPUT
       shell: bash
