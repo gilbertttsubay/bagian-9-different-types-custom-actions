@@ -19,7 +19,7 @@ runs:
   using: 'composite'
   steps:
     - name: Failed Job if not branch master
-      if: github.ref_name == 'master'
+      if: github.ref_name == 'daily/**'
       run: exit 1
       shell: bash
     - name: Only output inputted message
