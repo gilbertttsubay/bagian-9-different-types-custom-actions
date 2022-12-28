@@ -1,8 +1,6 @@
 name: 'Get and Cache Dependencies'
 description: 'Get the dependencies (via npm) and cache them'
-on:
-  push:
-    'daily/**'
+
 inputs:
   caching:
     description: 'Whether to cache dependencies or not'
@@ -25,3 +23,6 @@ runs:
       id: output-message
       run: echo "message='${{ inputs.message }}'" >> $GITHUB_OUTPUT
       shell: bash
+    - name: Output the branch
+      id: output-branch
+      run: echo "${{ GITHUB_REF }}"
